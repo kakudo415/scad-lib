@@ -10,6 +10,11 @@ module z(v) {
     translate([0, 0, v]) children();
 }
 
+module mirror_copy(vec = [0, 1, 0]) {
+    children();
+    mirror(vec) children();
+}
+
 function clothoid(t) = [cos_radian(t * t / 2), sin_radian(t * t / 2)];
 
 function cum_sum(v, _i=0,  _a=[]) =
